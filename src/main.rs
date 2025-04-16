@@ -2,8 +2,8 @@ mod arg_parser;
 
 use arg_parser::{
     CreateArgs,
+    CreateCommand,
     TodoParser,
-    TodoSubcommand,
 };
 use clap::Parser;
 
@@ -15,14 +15,16 @@ fn create(args: &CreateArgs) {
 
 fn main() {
     let args: TodoParser = TodoParser::parse();
-
-    if args.common.verbose {
-        println!("Verbose mode is enabled");
-    } else {
-        println!("Verbose mode is disabled");
-    }
-
     match &args.command {
-        TodoSubcommand::Create(args) => create(args),
+        // TODO: Implement the commented out commands
+
+        // Complete(args) => complete(args),
+        // Count(args) => count(args),
+        CreateCommand(args) => create(args),
+        // Delete(args) => delete(args),
+        // List(args) => list(args),
+        // Query(args) => query(args),
+        // Show(args) => show(args),
+        // Update(args) => update(args),
     }
 }
