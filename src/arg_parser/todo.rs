@@ -17,35 +17,35 @@ pub struct TodoParser {
 pub enum TodoCommand {
     // TODO: Implement the commented out commands
 
-    // /// Complete a new todo item
+    // /// Complete a todo item
     // #[clap(name = "complete")]
     // CompleteCommand(CompleteArgs),
 
-    // /// Count a new todo item
+    // /// Count todo items
     // #[clap(name = "count")]
     // CountCommand(CountArgs),
 
     /// Create a new todo item
-    #[clap(name = "add")]
+    #[clap(name = "add", aliases = ["create"])]
     CreateCommand(CreateArgs),
 
-    // /// Delete a new todo item
-    // #[clap(name = "rm")]
+    // /// Delete a todo item
+    // #[clap(name = "rm", ailases = ["delete", "remove"])]
     // DeleteCommand(DeleteArgs),
 
-    // /// List a new todo item
-    // #[clap(name = "ls")]
+    // /// List todo items
+    // #[clap(name = "ls", aliases = ["list"])]
     // ListCommand(ListArgs),
 
-    // /// Query a new todo item
+    // /// Query todo items
     // #[clap(name = "query")]
     // QueryCommand(QueryArgs),
 
-    // /// Show a new todo item
+    // /// Show a todo item
     // #[clap(name = "show")]
     // ShowCommand(ShowArgs),
 
-    // /// Update a new todo item
+    // /// Update a todo item
     // #[clap(name = "update")]
     // UpdateCommand(UpdateArgs),
 }
