@@ -1,7 +1,7 @@
-mod arg_parser;
-mod script;
+mod arg_parsers;
+mod scripts;
 
-use arg_parser::{
+use arg_parsers::{
     // CompleteCommand,
     // CountCommand,
     CreateCommand,
@@ -12,7 +12,7 @@ use arg_parser::{
     // ShowCommand,
     // UpdateCommand,
 };
-use script::{
+use scripts::{
     // complete,
     // count,
     create,

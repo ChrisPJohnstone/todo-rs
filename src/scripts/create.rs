@@ -1,4 +1,4 @@
-use crate::arg_parser::CreateArgs;
+use crate::arg_parsers::CreateArgs;
 
 pub fn create(args: &CreateArgs) {
     println!("Creating a new todo item");
