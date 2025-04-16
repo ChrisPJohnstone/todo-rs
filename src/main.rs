@@ -1,20 +1,20 @@
-mod args;
+mod arg_parser;
 
-use args::{
-    AddCommand,
-    TodoArgs,
-    TodoCommand,
+use arg_parser::{
+    CreateArgs,
+    TodoParser,
+    TodoSubcommand,
 };
 use clap::Parser;
 
-fn add(args: &AddCommand) {
-    println!("Adding a new todo item");
+fn create(args: &CreateArgs) {
+    println!("Creating a new todo item");
     println!("Args: {:?}", args);
 }
 
 
 fn main() {
-    let args: TodoArgs = TodoArgs::parse();
+    let args: TodoParser = TodoParser::parse();
 
     if args.common.verbose {
         println!("Verbose mode is enabled");
@@ -23,6 +23,6 @@ fn main() {
     }
 
     match &args.command {
-        TodoCommand::Add(args) => add(args),
+        TodoSubcommand::Create(args) => create(args),
     }
 }
