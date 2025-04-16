@@ -1,7 +1,8 @@
 mod arg_parsers;
 mod scripts;
+mod utils;
 
-use arg_parsers::{
+use crate::arg_parsers::{
     // CompleteCommand,
     // CountCommand,
     CreateCommand,
@@ -12,7 +13,7 @@ use arg_parsers::{
     // ShowCommand,
     // UpdateCommand,
 };
-use scripts::{
+use crate::scripts::{
     // complete,
     // count,
     create,
