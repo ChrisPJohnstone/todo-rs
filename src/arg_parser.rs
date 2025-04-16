@@ -1,6 +1,6 @@
-pub mod common;
-pub mod create;
-pub mod todo;
+mod common;
+mod create;
+mod todo;
 
 pub use todo::TodoSubcommand::{
     // TODO: Implement the commented out commands
