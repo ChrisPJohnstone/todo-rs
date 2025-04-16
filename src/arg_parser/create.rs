@@ -1,4 +1,4 @@
-use clap:: {Args};
+use clap::Args;
 
 use super::shared::{CommonArgs, DueArgs};
 
