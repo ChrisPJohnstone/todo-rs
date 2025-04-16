@@ -1,30 +1,41 @@
 mod arg_parser;
+mod script;
 
 use arg_parser::{
-    CreateArgs,
+    // CompleteCommand,
+    // CountCommand,
     CreateCommand,
+    // DeleteCommand,
+    // ListCommand,
     TodoParser,
+    // QueryCommand,
+    // ShowCommand,
+    // UpdateCommand,
+};
+use script::{
+    // complete,
+    // count,
+    create,
+    // delete,
+    // list,
+    // query,
+    // show,
+    // update,
 };
 use clap::Parser;
-
-fn create(args: &CreateArgs) {
-    println!("Creating a new todo item");
-    println!("Args: {:?}", args);
-}
-
 
 fn main() {
     let args: TodoParser = TodoParser::parse();
     match &args.command {
         // TODO: Implement the commented out commands
 
-        // Complete(args) => complete(args),
-        // Count(args) => count(args),
+        // CompleteCommand(args) => complete(args),
+        // CountCommand(args) => count(args),
         CreateCommand(args) => create(args),
-        // Delete(args) => delete(args),
-        // List(args) => list(args),
-        // Query(args) => query(args),
-        // Show(args) => show(args),
-        // Update(args) => update(args),
+        // DeleteCommand(args) => delete(args),
+        // ListCommand(args) => list(args),
+        // QueryCommand(args) => query(args),
+        // ShowCommand(args) => show(args),
+        // UpdateCommand(args) => update(args),
     }
 }
