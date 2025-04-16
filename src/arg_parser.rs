@@ -1,8 +1,8 @@
-mod common;
 mod create;
+mod shared;
 mod todo;
 
-pub use todo::TodoSubcommand::{
+pub use todo::TodoCommand::{
     // TODO: Implement the commented out commands
 
     // CompleteCommand,
@@ -14,6 +14,5 @@ pub use todo::TodoSubcommand::{
     // ShowCommand,
     // UpdateCommand,
 };
-pub use common::CommonArgs;
 pub use create::CreateArgs;
 pub use todo::TodoParser;

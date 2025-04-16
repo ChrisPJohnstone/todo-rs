@@ -1,19 +1,20 @@
 use clap:: {Parser, Subcommand};
 
-use super::{CreateArgs, CommonArgs};
+use super::CreateArgs;
+use super::shared::CommonArgs;
 
 #[derive(Debug, Parser)]
 #[clap(version)]
 pub struct TodoParser {
-    #[clap(subcommand)]
-    pub command: TodoSubcommand,
-
     #[command(flatten)]
     pub common: CommonArgs,
+
+    #[clap(subcommand)]
+    pub command: TodoCommand,
 }
 
 #[derive(Debug, Subcommand)]
-pub enum TodoSubcommand {
+pub enum TodoCommand {
     // TODO: Implement the commented out commands
 
     // /// Complete a new todo item

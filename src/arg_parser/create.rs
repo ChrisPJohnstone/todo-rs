@@ -1,17 +1,17 @@
 use clap:: {Args};
 
-use super::CommonArgs;
+use super::shared::{CommonArgs, DueArgs};
 
 #[derive(Debug, Args)]
 pub struct CreateArgs {
+    #[command(flatten)]
+    pub common: CommonArgs,
+
     /// The message of the todo item
     #[arg(num_args = 1..)]
     pub message: Vec<String>,
-
-    /// When the todo item is due
-    #[arg(short, long, default_value = "later")]
-    pub due: Option<String>,
+    // TODO: This should be mandatory
 
     #[command(flatten)]
-    pub common: CommonArgs,
+    pub due: DueArgs,
 }

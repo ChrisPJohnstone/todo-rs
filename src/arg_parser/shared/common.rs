@@ -6,4 +6,3 @@ pub struct CommonArgs {
     #[arg(short, long)]
     pub verbose: bool,
 }
-
